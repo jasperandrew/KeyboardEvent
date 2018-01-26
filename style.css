@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 10vh 0 0 0;
+    overflow: hidden;
+    background: #ddd;
+}
+
+a {
+    text-decoration: none;
+    color: green;
+}
+
+p {
+    width: 80vw;
+    text-align: center;
+    height: 20vmin;
+    margin: 0 auto;
+    line-height: 20vmin;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#location {
+    font-size: 10vmin;
+}
+
+#key {
+    font-size: 20vmin;
+}
+
+#description {
+    font-size: 5vmin;
+    line-height: 100%;
+    padding-top: 10vmin;
+}
+
+#madeby {
+    width: 100vw;
+    font-size: 2.5vmin;
+    position: fixed;
+    bottom: 0;
+    line-height: 100%;
+    height: 5vmin;
+}
