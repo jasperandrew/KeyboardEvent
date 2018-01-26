@@ -334,6 +334,6 @@ document.onkeydown = function(e) {
     let desc = keys[e.key];
 
     document.querySelector('#location').innerHTML = location;
-    document.querySelector('#key').innerHTML = '"' + e.key + '"';
+    document.querySelector('#key > span').innerHTML = e.key;
     document.querySelector('#description').innerHTML = desc || 'What key was that?!';
 };

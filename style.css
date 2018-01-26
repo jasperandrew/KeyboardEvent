@@ -25,6 +25,11 @@ p {
 
 #key {
     font-size: 20vmin;
+    color: #777;
+}
+
+#key > span {
+    color: #000;
 }
 
 #description {
