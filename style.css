@@ -19,6 +19,16 @@ p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 2vmin;
+    width: auto;
+    line-height: 100%;
+    padding: 2vmin;
+}
+
 #location {
     font-size: 10vmin;
 }

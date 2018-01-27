@@ -1,5 +1,5 @@
+let show_keys = true;
 const locations = { 0: '', 1: 'Left ', 2: 'Right ', 3: "Numpad " };
-
 const keys = {
     'a':'a', 'b':'b', 'c':'c', 'd':'d', 'e':'e', 'f':'f', 'g':'g', 'h':'h', 'i':'i', 'j':'j', 'k':'k', 'l':'l', 'm':'m', 'n':'n', 'o':'o', 'p':'p',   'q':'q', 'r':'r',   's':'s', 't':'t', 'u':'u', 'v':'v', 'w':'w', 'x':'x', 'y':'y', 'z':'z', 
     'A':'A', 'B':'B', 'C':'C', 'D':'D', 'E':'E', 'F':'F', 'G':'G', 'H':'H', 'I':'I', 'J':'J', 'K':'K', 'L':'L', 'M':'M', 'N':'N', 'O':'O', 'P':'P',   'Q':'Q', 'R':'R',   'S':'S', 'T':'T', 'U':'U', 'V':'V', 'W':'W', 'X':'X', 'Y':'Y', 'Z':'Z', 
@@ -325,15 +325,24 @@ const keys = {
     'Separator':'The numeric keypad\'s places separator character (in the United States, this is a comma, but elsewhere it is frequently a period).'
 };
 
+document.onclick = function() {
+    show_keys = !show_keys;
+    document.querySelector('#mode').innerHTML = show_keys ? 'KeyboardEvent.key (Click to change mode)' : 'KeyboardEvent.code (Click to change mode)';
+    document.title = show_keys ? 'KeyboardEvent.key' : 'KeyboardEvent.code';
+}
+
 document.onkeydown = function(e) {
     if ( !e.metaKey ) {
         e.preventDefault();
     }
 
-    let location = locations[e.location];
-    let desc = keys[e.key];
-
-    document.querySelector('#location').innerHTML = location;
-    document.querySelector('#key > span').innerHTML = e.key;
-    document.querySelector('#description').innerHTML = desc || 'What key was that?!';
+    if(show_keys){
+        document.querySelector('#location').innerHTML = locations[e.location];
+        document.querySelector('#key > span').innerHTML = e.key;
+        document.querySelector('#description').innerHTML = keys[e.key] || 'What key was that?!';
+    }else{
+        document.querySelector('#location').innerHTML = '';
+        document.querySelector('#key > span').innerHTML = e.code;
+        document.querySelector('#description').innerHTML = '';
+    }
 };
